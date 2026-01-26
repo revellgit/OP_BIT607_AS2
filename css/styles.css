@@ -1,0 +1,707 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Recommended addition for consistent box model behavior */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+}
+
+:root {
+  --color1: lightgray;
+  --color2: darkgray;
+}
+
+@media (min-width: 375px) {
+
+  /* Main layout styles */
+
+  .main-container,
+  .header-inner,
+  .footer-inner {
+    width: 100%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 1rem;
+    /* padding-top: 0; */
+  }
+
+  /* Mobile-menu (hidden by default) */
+  .mobile-menu {
+    position: absolute;
+    top: 82px;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-top: 1px solid #ccc;
+    padding: 1rem 0;
+    /* start hidden */
+    display: none;
+    z-index: 2000;
+    border: 1px solid black;
+  }
+
+  .mobile-menu.open {
+    display: block;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-menu li a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .mobile-menu li:last-child a {
+    border-bottom: none;
+  }
+
+  .mobile-menu li a.mobile-cart-btn {
+    display: inline-flex;
+    margin-left: 12px;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    background-color: rgba(47, 75, 77, 0.5);
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+
+  section {
+    padding-bottom: 1rem;
+  }
+
+  .site-header {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .mobile-navbar {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .mobile-navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+  }
+
+  .mobile-navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    /* margin-right: 12px; */
+    font-weight: bold;
+  }
+
+  .mob-nav-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* spacing between items */
+  }
+
+  /* Burger */
+  .nav-burger {
+    font-size: 1.5rem;
+    margin-right: 0.25rem;
+    /* bigger gap after burger */
+    background: black;
+    /* background: none; */
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Brand */
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .brand img {
+    height: 44px;
+  }
+
+  .brand-name {
+    white-space: nowrap;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .nav-burger,
+  .mob-call-btn {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* square button */
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+    /* makes the icon/burger visually similar */
+    border-radius: 8px;
+    /* optional, matches burger style */
+    background-color: #333;
+    /* example burger background */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    /* for <a> links */
+  }
+
+  /* Call button */
+  /*
+  .mob-call-btn {
+    margin: 0;
+  }
+    */
+
+  header,
+  footer {
+    width: 100%;
+    max-width: none;
+    background-color: var(--color2);
+  }
+
+  .header-inner {
+    display: flex;
+    flex-direction: row;
+    background-color: #333333;
+  }
+
+  .home-hero {
+    background-color: var(--color2);
+  }
+
+  .home-our-services {
+    background-color: var(--color1);
+  }
+
+  .footer-inner {
+    background-color: #333333;
+  }
+
+  .main img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 25svh;
+  }
+
+  .footer-left {
+    background-color: var(--color1);
+  }
+
+  .footer-left p {
+    text-align: left;
+    padding: 1rem;
+  }
+
+  .footer-right {
+    background-color: var(--color2);
+  }
+
+  .footer-socials {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding-top: 1rem;
+    width: 50%;
+    margin: 0 auto;
+    /* max-width: 120px; */
+    justify-content: center;
+    align-content: center;
+  }
+
+  .footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-socials img {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* HOME PAGE MOBILE *********************************** */
+
+
+  /* Temporary placeholder image fix */
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+
+  .section-heading-padding {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .home-popular-services {
+    background-color: var(--color2);
+  }
+
+  .home-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .home-service-card {
+    display: flex;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  /* Left image stays fixed width */
+  .home-service-card img {
+    width: 120px;
+    object-fit: cover;
+  }
+
+
+
+  /* Right side content always beside image */
+  .service-content {
+    flex: 1;
+    padding: .75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-align: left;
+  }
+
+  .service-content h3 {
+    text-align: left;
+    padding: 0;
+  }
+
+  /* Price + button row stays with content */
+  .service-price-book {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  .price-range {
+    font-weight: bold;
+  }
+
+  .btn {
+    padding: .35rem .75rem;
+    font-size: .85rem;
+    background: black;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+
+  .btn:hover {
+    opacity: .85;
+  }
+
+  /* Button styling */
+  button {
+    background-color: #0066cc;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #004999;
+  }
+
+  /* SERVICES --- MOBILE *********************************** */
+
+  .services-table table {
+    width: 90%;
+    max-width: 400px;
+    /* keeps it from stretching too wide */
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+
+  .services-table th {
+    text-align: left;
+    border-bottom: 1px solid black;
+  }
+
+  .services-table th,
+  .services-table td {
+    padding: 0.5rem 1rem;
+  }
+
+  /* vertical divider between columns */
+  .services-table th:first-child,
+  .services-table td:first-child {
+    border-right: 1px solid #ccc;
+  }
+
+  /* GALLERY --- MOBILE ****************************** */
+
+  .gallery-heading {
+    background-color: var(--color1);
+
+  }
+
+  .gallery-heading p {
+
+    text-align: center;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* default mobile: 2 columns */
+    gap: 0.5rem;
+    /* space between images */
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    /* keeps images uniform */
+    aspect-ratio: 1 / 1;
+    /* ensures square images */
+  }
+
+  .testimonial-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+  }
+
+  .test-card {
+    border: 1px solid black;
+  }
+
+  .test-customer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .test-customer img {
+    width: 44px;
+    height: 44px;
+    border: 1px solid black;
+  }
+
+  .test-customer p {
+    display: flex;
+    align-items: center;
+    padding-left: 0.25rem;
+  }
+
+  .test-text p {
+    padding-top: 0.50rem;
+  }
+
+  /* BOOKING --- MOBILE ******************************* */
+
+  .book-heading-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .book-heading-left {
+    text-align: left;
+  }
+
+  .book-heading-left p {
+    padding-top: 0.5rem;
+  }
+
+  .book-heading-right img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .booking-form {
+    background-color: var(--color1);
+  }
+
+  .booking-form form {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 2rem;
+  }
+
+  .booking-form input,
+  .booking-form textarea {
+    padding: 0.25rem;
+    font-size: inherit;
+  }
+
+  .booking-form button[type="submit"] {
+    width: 200px;
+    margin: 1.5rem auto 0;
+    display: block;
+    font-weight: bold;
+  }
+
+  .dropdown summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* text left, arrow right */
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+  }
+
+  .dropdown summary::after {
+    content: "▾";
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-left: 0.75rem;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    transition: transform 0.2s ease;
+  }
+
+  .dropdown[open] summary::after {
+    transform: rotate(180deg);
+  }
+
+  .dropdown summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .dropdown summary {
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    background: #111;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    /* border-radius: 6px; */
+  }
+
+  .dropdown ul {
+    /* margin: 0.5rem 0 0; */
+    padding: 0.5rem;
+    list-style: none;
+    background: white;
+    /* border-radius: 6px; */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .dropdown li {
+    display: block;
+    padding: 0.5rem 0.5rem;
+    color: #111;
+    text-decoration: none;
+  }
+
+
+
+  /* CONTACT --- MOBILE ****************************** */
+
+  .contact-heading {
+    background-color: var(--color2);
+  }
+
+  .map-container {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 1px solid black;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .contact-info p {
+    text-align: center;
+  }
+
+  .contact-info table {
+    width: 90%;
+    max-width: 400px;
+    /* keeps it from stretching too wide */
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+
+  .contact-info th {
+    text-align: left;
+  }
+
+  .contact-info th,
+  .contact-info td {
+    padding: 0.5rem 1rem;
+  }
+
+  .contact-form {
+    background-color: var(--color1);
+  }
+
+  .contact-form form {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.25rem;
+    font-size: inherit;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .contact-form textarea {
+    font-family: inherit;
+    font-style: normal;
+    /* font-size: inherit; */
+    color: #999;
+    line-height: 1.4;
+    opacity: 1;
+  }
+
+  .contact-form button[type="submit"] {
+    width: 200px;
+    margin: 1.5rem auto 0;
+    display: block;
+    font-weight: bold;
+  }
+
+
+
+
+
+}
+
+/* ************************************************* */
+
+
+
+
+/* ************************************************* */
+
+
+/* TABLET screen width 768px - 1023 px */
+
+@media (min-width: 768px) {
+
+  .main-container,
+  .header-inner,
+  .footer-inner {
+    padding: 2rem;
+  }
+
+  /* HOME PAGE --- TABLET */
+
+  .home-card-list {
+    flex-direction: row;
+    /* sit next to each other */
+    flex-wrap: wrap;
+    /* wrap to new line if needed */
+    gap: 1.5rem;
+  }
+
+  .home-service-card {
+    flex: 1 1 calc(50% - 1.5rem);
+    /* two cards per row */
+    max-width: calc(50% - 1.5rem);
+  }
+
+  /* SERVICES --- TABLET */
+
+
+
+
+
+}
+
+/* DESKTOP screen width 1024+px */
+
+@media (min-width: 1024px) {
+
+  .main-container,
+  .header-inner,
+  .footer-inner {
+    /* max-width: 1200px; */
+    /* prevents content becoming too wide */
+    margin: 0 auto;
+    /* centres content */
+    padding: 3rem;
+  }
+
+  .home-card-list {
+    flex-direction: row;
+    /* sit next to each other */
+    flex-wrap: wrap;
+    /* wrap to new line if needed */
+    gap: 1.5rem;
+  }
+
+  .home-service-card {
+    flex: 1 1 calc(33.333% - 1.5rem);
+    /* two cards per row */
+    max-width: calc(33.333% - 1.5rem);
+  }
+
+
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/styles.min.css"> -->
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Snazzy Paws Grooming | Services</title>
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <nav class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="mobile-navbar">
+            <div class="mob-nav-left">
+                <button class="nav-burger" id="burger" aria-label="Open menu">
+                    ☰
+                </button>
+
+                <div class="brand">
+                    <img src="images/facebook.png" alt="Brand logo">
+                    <span class="brand-name">Snazzy Paws Grooming</span>
+                </div>
+            </div>
+
+            <a href="tel:0800123456" class="mob-call-btn" aria-label="Call us">
+                📞
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="special-offer">
+            <h1 class="section-heading-padding">Services</h1>
+            <p>Welcome to our services</p>
+            <img src="images/dog-grooming.jpg">
+            <a href="#" class="btn">BOOK NOW!</a>
+        </section>
+
+        <section class="our-services section-heading-padding">
+            <article class="service-card">
+                <h3>Service #1</h3>
+                <img src="images/dog-grooming.jpg">
+                <p>Service description text</p>
+                <p>Price</p>
+                <a href="#" class="btn">BOOK</a>
+            </article>
+            <article class="service-card">
+
+            </article>
+            <article class="service-card">
+
+            </article>
+        </section>
+
+        <section class="services-table">
+            <h2 class="section-heading-padding">Our Services</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Full Groom</td>
+                        <td>$60</td>
+                    </tr>
+                    <tr>
+                        <td>Wash & Dry</td>
+                        <td>$35</td>
+                    </tr>
+                    <tr>
+                        <td>Nail Trim</td>
+                        <td>$15</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="other-services">
+            <h3 class="section-heading-padding">Other Services</h3>
+            <img src="images/dog-grooming.jpg">
+            <p>A description of this service</p>
+            <a href="#" class="btn">BOOK</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-left">
+                <h3 class="section-heading-padding">Snazzy Paws</h3>
+                <p>Store Location</p>
+                <p>Phone</p>
+                <p>Email</p>
+            </div>
+            <div class="footer-right">
+                <h3 class="section-heading-padding">Follow Us</h3>
+                <div class="footer-socials">
+                    <!--- freepik.com -->
+                    <a href="#"><img src="images/facebook.png" alt="Facebook" aria-label="Facebook"></a>
+                    <a href="#"><img src="images/instagram.png" alt="Instagram" aria-label="Instagram"></a>
+                    <a href="#"><img src="images/twitter.png" alt="Twitter" aria-label="Twitter"></a>
+                    <a href="#"><img src="images/youtube.png" alt="YouTube" aria-label="Youtube"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-hours">
+            <p><strong>OPEN</strong> - Mon–Fri: 9am–5pm | Sat: 9am–1pm | Sun: Closed</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("burger").addEventListener("click", () => {
+            document.querySelector(".mobile-menu").classList.toggle("open");
+        });
+    </script>
+</body>
+
+</html>
