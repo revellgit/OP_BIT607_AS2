@@ -32,6 +32,10 @@ body {
     /* padding-top: 0; */
   }
 
+  .tabdesk-nav {
+    display: none;
+  }
+
   /* Mobile-menu (hidden by default) */
   .mobile-menu {
     position: absolute;
@@ -90,6 +94,8 @@ body {
   .site-header {
     padding: 0.75rem 1rem;
     border-bottom: 1px solid #eee;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
 
   .mobile-navbar {
@@ -149,7 +155,6 @@ body {
 
   .nav-burger,
   .mob-call-btn {
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -190,11 +195,46 @@ body {
   }
 
   .home-hero {
-    background-color: var(--color2);
+    position: relative;
+    min-height: 40svh;
+    background-image: url("../images/dog-grooming.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    overflow: hidden;
   }
+
+  .home-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    /* darkness level */
+  }
+
+  .hero-content {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  /*
 
   .home-our-services {
     background-color: var(--color1);
+
+}
+*/
+
+  .home-our-services img {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid lightgray;
+    object-fit: contain;
   }
 
   .footer-inner {
@@ -207,6 +247,11 @@ body {
     display: block;
   }
 
+  footer {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
   .footer-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -215,22 +260,28 @@ body {
 
   .footer-left {
     background-color: var(--color1);
+    border-radius: 20px;
+    margin: 0.5rem;
   }
+
 
   .footer-left p {
     text-align: left;
     padding: 1rem;
+    padding-bottom: 0.5rem;
   }
 
   .footer-right {
-    background-color: var(--color2);
+    background-color: var(--color1);
+    border-radius: 20px;
+    margin: 0.5rem;
   }
 
   .footer-socials {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     width: 50%;
     margin: 0 auto;
     /* max-width: 120px; */
@@ -259,14 +310,13 @@ body {
     object-fit: cover;
   }
 
-
   .section-heading-padding {
     padding: 1rem;
     text-align: center;
   }
 
   .home-popular-services {
-    background-color: var(--color2);
+    /* background-color: var(--color2); */
   }
 
   .home-card-list {
@@ -279,7 +329,7 @@ body {
     display: flex;
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
     overflow: hidden;
   }
 
@@ -288,8 +338,6 @@ body {
     width: 120px;
     object-fit: cover;
   }
-
-
 
   /* Right side content always beside image */
   .service-content {
@@ -346,6 +394,56 @@ body {
 
   /* SERVICES --- MOBILE *********************************** */
 
+  .services-heading p {
+    text-align: center;
+  }
+
+  .special-offer img {
+    padding-bottom: 1rem;
+  }
+
+  .special-offer a {
+    display: flex;
+    justify-content: center;
+  }
+
+  .service-card {
+    border-bottom: 1px solid black;
+    margin-bottom: 1rem;
+  }
+
+  .service-card h3,
+  p {
+    text-align: left;
+  }
+
+  .service-card hr {
+    width: 75%;
+    margin-top: 0.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: last baseline;
+    margin-top: 0.5rem;
+  }
+
+  .service-price p {
+    font-weight: bold;
+  }
+
+  .other-services img,
+  p {
+    padding-bottom: 1rem;
+  }
+
+  .other-services a {
+    display: flex;
+    justify-content: center;
+  }
+
   .services-table table {
     width: 90%;
     max-width: 400px;
@@ -375,12 +473,17 @@ body {
 
   .gallery-heading {
     background-color: var(--color1);
-
   }
 
   .gallery-heading p {
-
     text-align: center;
+  }
+
+  .feature-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: first baseline;
+    margin-top: auto;
   }
 
   .gallery-grid {
@@ -408,6 +511,8 @@ body {
 
   .test-card {
     border: 1px solid black;
+    border-radius: 8px;
+    padding: 0.25rem;
   }
 
   .test-customer {
@@ -418,17 +523,23 @@ body {
   .test-customer img {
     width: 44px;
     height: 44px;
-    border: 1px solid black;
+    border: 1px solid lightgray;
+    border-radius: 8px;
   }
 
   .test-customer p {
     display: flex;
     align-items: center;
+    font-weight: bold;
     padding-left: 0.25rem;
   }
 
   .test-text p {
     padding-top: 0.50rem;
+  }
+
+  .extra-test-card {
+    display: none;
   }
 
   /* BOOKING --- MOBILE ******************************* */
@@ -455,13 +566,14 @@ body {
 
   .booking-form {
     background-color: var(--color1);
+    border-radius: 20px;
   }
 
   .booking-form form {
     text-align: left;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.55rem;
     padding-top: 2rem;
   }
 
@@ -476,15 +588,23 @@ body {
     margin: 1.5rem auto 0;
     display: block;
     font-weight: bold;
+    border-radius: 8px;
+  }
+
+  .dropdown {
+    padding-top: 1rem;
   }
 
   .dropdown summary {
-    list-style: none;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* text left, arrow right */
+    list-style: none;
+    font-weight: 600;
+    color: white;
+    background: #111;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     padding: 0.75rem 1rem;
     cursor: pointer;
   }
@@ -513,16 +633,6 @@ body {
     display: none;
   }
 
-  .dropdown summary {
-    padding: 0.75rem 1rem;
-    font-weight: 600;
-    background: #111;
-    color: white;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    /* border-radius: 6px; */
-  }
-
   .dropdown ul {
     /* margin: 0.5rem 0 0; */
     padding: 0.5rem;
@@ -539,12 +649,11 @@ body {
     text-decoration: none;
   }
 
-
-
   /* CONTACT --- MOBILE ****************************** */
 
   .contact-heading {
     background-color: var(--color2);
+    border-radius: 20px;
   }
 
   .map-container {
@@ -569,8 +678,10 @@ body {
     max-width: 400px;
     /* keeps it from stretching too wide */
     margin: 0 auto;
-    border-collapse: collapse;
+    border-collapse: separate;
     border: 1px solid black;
+    border-radius: 20px;
+    overflow: hidden;
   }
 
   .contact-info th {
@@ -584,6 +695,8 @@ body {
 
   .contact-form {
     background-color: var(--color1);
+    border-radius: 20px;
+    margin-top: 1rem;
   }
 
   .contact-form form {
@@ -591,6 +704,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    margin: 1rem;
   }
 
   .contact-form input,
@@ -614,7 +728,7 @@ body {
   .contact-form textarea {
     font-family: inherit;
     font-style: normal;
-    /* font-size: inherit; */
+    font-size: 0.95rem;
     color: #999;
     line-height: 1.4;
     opacity: 1;
@@ -625,11 +739,8 @@ body {
     margin: 1.5rem auto 0;
     display: block;
     font-weight: bold;
+    border-radius: 8px;
   }
-
-
-
-
 
 }
 
@@ -701,6 +812,57 @@ body {
     flex: 1 1 calc(33.333% - 1.5rem);
     /* two cards per row */
     max-width: calc(33.333% - 1.5rem);
+  }
+
+  .nav-burger {
+    display: none;
+  }
+
+  .mob-call-btn {
+    display: none;
+  }
+
+  .tabdesk-nav {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .tabdesk-nav ul {
+    display: flex;
+    /* gap: 0.5rem; */
+    text-decoration: none;
+    list-style: none;
+    background-color: #333333;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid white;
+    /* border: 1px solid white; */
+  }
+
+  .tabdesk-nav li {
+    /* padding: 1rem; */
+    border-right: 1px solid white;
+    /* gap: 0.5rem; */
+  }
+
+  .tabdesk-nav li:last-child {
+    border-right: none;
+  }
+
+  .tabdesk-nav li:hover {
+    background-color: #999;
+  }
+
+  .tabdesk-nav a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+  }
+
+  .tabdesk-nav a[aria-current="page"] {
+    background-color: red;
   }
 
 
