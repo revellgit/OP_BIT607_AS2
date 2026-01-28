@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* Recommended addition for consistent box model behavior */
+  /* Recommended for consistent box model behavior */
 }
 
 body {
@@ -33,6 +33,10 @@ body {
   }
 
   .tabdesk-nav {
+    display: none;
+  }
+
+  .desk-footer {
     display: none;
   }
 
@@ -85,7 +89,6 @@ body {
     text-decoration: none;
     font-weight: 500;
   }
-
 
   section {
     padding-bottom: 1rem;
@@ -174,13 +177,6 @@ body {
     /* for <a> links */
   }
 
-  /* Call button */
-  /*
-  .mob-call-btn {
-    margin: 0;
-  }
-    */
-
   header,
   footer {
     width: 100%;
@@ -221,14 +217,6 @@ body {
     text-align: center;
     padding: 1rem;
   }
-
-  /*
-
-  .home-our-services {
-    background-color: var(--color1);
-
-}
-*/
 
   .home-our-services img {
     border-radius: 8px;
@@ -322,6 +310,7 @@ body {
   .home-card-list {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1rem;
   }
 
@@ -367,8 +356,9 @@ body {
   }
 
   .btn {
-    padding: .35rem .75rem;
+    padding: .35rem .60rem;
     font-size: .85rem;
+    font-weight: bold;
     background: black;
     color: white;
     border-radius: 6px;
@@ -393,6 +383,10 @@ body {
   }
 
   /* SERVICES --- MOBILE *********************************** */
+
+  .service-categories {
+    display: none;
+  }
 
   .services-heading p {
     text-align: center;
@@ -570,12 +564,16 @@ body {
   }
 
   .booking-form form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
     text-align: left;
     display: flex;
     flex-direction: column;
     gap: 0.55rem;
     padding-top: 2rem;
-  }
+  }  
 
   .booking-form input,
   .booking-form textarea {
@@ -658,7 +656,8 @@ body {
 
   .map-container {
     width: 100%;
-    max-width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
     aspect-ratio: 16 / 9;
     border: 1px solid black;
   }
@@ -697,14 +696,19 @@ body {
     background-color: var(--color1);
     border-radius: 20px;
     margin-top: 1rem;
+    display: block;
   }
 
   .contact-form form {
-    text-align: left;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    /* text-align: left; */
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    margin: 1rem;
+    /* margin: 1rem; */
   }
 
   .contact-form input,
@@ -822,6 +826,22 @@ body {
     display: none;
   }
 
+  .home-our-services {
+    display: none;
+  }
+
+  .special-offer {
+    display: none;
+  }
+
+  .other-services {
+    display: none;
+  }
+
+  .footer-wrapper {
+    display: none;
+  }
+
   .tabdesk-nav {
     display: flex;
     flex-direction: row;
@@ -864,6 +884,106 @@ body {
   .tabdesk-nav a[aria-current="page"] {
     background-color: red;
   }
+
+  .desk-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .branding,
+  .quick-links,
+  .follow {
+    padding: 1rem;
+    border-radius: 20px;
+    margin: 1rem;
+  }
+
+  .branding {
+    background-color: var(--color1);
+  }
+
+  .branding-content {
+    display: flex;
+  }
+
+  .branding-content img {
+    width: 66px;
+    height: 66px;
+  }
+
+  .branding-content h3 {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+  }
+
+  .branding p {
+    margin-top: 0.5rem;
+  }
+
+  .quick-links {
+    background-color: var(--color1);
+    text-align: center;
+  }
+
+  .quick-links ul,
+  li,
+  a {
+    text-decoration: none;
+    list-style: none;
+  }
+
+  .quick-links li {
+    padding-bottom: 1rem;
+  }
+
+  .follow {
+    background-color: var(--color1);
+  }
+
+  .follow-images {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .follow-images img {
+    width: 58px;
+    height: 58px;
+
+  }
+
+  /* SERVICES --- DESKTOP ********************************* */
+
+  .our-services {
+    display: none;
+  }
+
+  .service-categories {
+    display: block;
+    width: 100%;
+  }
+
+  .category-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  /* GALLERY --- DESKTOP ********************************** */
+
+  .extra-test-card {
+    display: block;
+  }
+
+  /* BOOKING --- DESKTOP ********************************* */
+
+
+
+  /* CONTACT --- DESKTOP ********************************* */
+
 
 
 }
